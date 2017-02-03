@@ -1,12 +1,13 @@
-.player {
-  height: 100%;
-  background: #222;
-  color: #fff;
-  position: relative;
+@font-face {
+  font-family: 'Circular Standard';
+  src: url('../fonts/CircularStd-Book.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
 }
 
 body {
-  font: .875em/1.286 Circular Standard,Futura,Gill Sans,Gill Sans MT,Calibri,sans-serif;
+  font: .875em/1.286 Circular Standard;
+  text-shadow: 0 0 1px rgba(34,34,34,0.4);
   background: #fff;
   color: #393939;
   margin: 0;
@@ -30,6 +31,12 @@ a {
   -webkit-app-region: no-drag;
 }
 
+.player {
+  height: 100%;
+  background: #222;
+  color: #fff;
+  position: relative;
+}
 .status { position: relative; padding: 20px 15px 10px 15px; overflow: hidden; height: 75px }
 .player>* { position: relative; }
 .player>.artwork-background { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: center; background-size: cover; background-color: #393939; filter: blur(30px) contrast(90%) brightness(110%) saturate(130%) opacity(80%); transform: scale(1.2); }
@@ -40,23 +47,23 @@ a {
 #rating_bubble { text-align: center; }
 #artwork-container>span { position: absolute; top: -1em; right: -1em; background: #666; color: #fff; border-radius: 50%; width: 2em; height: 2em; line-height: 2em; }
 
-#artwork-container>.positive_9 { background-color: #efd73c; }
-#artwork-container>.positive_8 { background-color: #decd5f; }
-#artwork-container>.positive_7 { background-color: #cfcd63; }
-#artwork-container>.positive_6 { background-color: #c0cd66; }
-#artwork-container>.positive_5 { background-color: #b0cc6a; }
-#artwork-container>.positive_4 { background-color: #a0cc6e; }
-#artwork-container>.positive_3 { background-color: #93cd79; }
-#artwork-container>.positive_2 { background-color: #8bcf98; }
-#artwork-container>.positive_1 { background-color: #84d2bd; }
-#artwork-container>.neutral    { background-color: #7dd5ea; }
-#artwork-container>.negative_1 { background-color: #bb9ac5; }
-#artwork-container>.negative_2 { background-color: #dd79b0; }
-#artwork-container>.negative_3 { background-color: #cc6666; }
-#artwork-container>.negative_4 { background-color: #b26733; }
-#artwork-container>.negative_5 { background-color: #996600; }
-#artwork-container>.negative_6 { background-color: #7b2908; }
-#artwork-container>.unrated, #artwork-container .fa { display: none; }
+#rating_bubble.positive_9 { background-color: #efd73c; }
+#rating_bubble.positive_8 { background-color: #decd5f; }
+#rating_bubble.positive_7 { background-color: #cfcd63; }
+#rating_bubble.positive_6 { background-color: #c0cd66; }
+#rating_bubble.positive_5 { background-color: #b0cc6a; }
+#rating_bubble.positive_4 { background-color: #a0cc6e; }
+#rating_bubble.positive_3 { background-color: #93cd79; }
+#rating_bubble.positive_2 { background-color: #8bcf98; }
+#rating_bubble.positive_1 { background-color: #84d2bd; }
+#rating_bubble.neutral    { background-color: #7dd5ea; }
+#rating_bubble.negative_1 { background-color: #bb9ac5; }
+#rating_bubble.negative_2 { background-color: #dd79b0; }
+#rating_bubble.negative_3 { background-color: #cc6666; }
+#rating_bubble.negative_4 { background-color: #b26733; }
+#rating_bubble.negative_5 { background-color: #996600; }
+#rating_bubble.negative_6 { background-color: #7b2908; }
+#rating_bubble.unrated, #artwork-container .fa { display: none; }
 
 #voting_container { font-size: 1.7em; }
 #voting_container>a { display: inline-block; margin: 0 .3em; }
@@ -64,7 +71,7 @@ a {
 #voting_container a:not(.voted):focus, #voting_container a:not(.voted):hover { transform: scale(1.2) rotate(5deg); }
 #vote_up:hover { color:green; }
 #vote_down:hover { color: red; }
-#playlist:hover { color: yellow; }
+#playlist:hover { color: yellow; transform: none !important; }
 #vote_up.voted {
   color:green;
 }
@@ -84,7 +91,6 @@ a {
   font-size: 1.143em;
   color: #fff;
   margin: 0;
-  text-shadow: 0 0 1px rgba(34,34,34,0.4);
 }
 
 #artwork_background {

@@ -73,7 +73,17 @@ let template = [{
   //       createFourthLayoutWindow();
   //     }
   //   }
-  // }
+  // },
+  {
+    label: 'Layout 5',
+    accelerator: 'Cmd+5',
+    click: function (item, focusedWindow) {
+      if (focusedWindow) {
+        closeAllWindows();
+        createFifthLayoutWindow();
+      }
+    }
+  }
   ]
 }]
 
@@ -196,6 +206,24 @@ function createFourthLayoutWindow() {
   }))
 
   mainWindow.webContents.openDevTools()
+
+  mainWindow.on('closed', function () {
+    mainWindow = null
+    reloadAllWindows();
+  })
+}
+
+function createFifthLayoutWindow() {
+  mainWindow = new BrowserWindow({width: 260, height: 74, resizable: false, frame: false, alwaysOnTop: false})
+  // mainWindow = new BrowserWindow({width: 800, height: 500, resizable: false, frame: false})
+
+  mainWindow.loadURL(url.format({
+    pathname: path.join(__dirname, 'layout_5.html'),
+    protocol: 'file:',
+    slashes: true
+  }))
+
+  // mainWindow.webContents.openDevTools()
 
   mainWindow.on('closed', function () {
     mainWindow = null

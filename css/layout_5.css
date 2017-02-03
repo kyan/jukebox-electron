@@ -1,0 +1,42 @@
+@import 'styles.css';
+@import 'layout_3.css';
+
+body {
+  font-size: .625em;
+}
+.status { position: relative; padding: 10px; overflow: hidden; height: 55px }
+
+#votes_container {
+  height: 20px;
+  margin-left: 0;
+}
+
+#artwork-container { height: 55px; width: 55px; }
+
+.right_container {
+  float: right;
+  margin-top: 3px;
+  margin-right: 15px;
+}
+
+.middle_container {
+  margin-left: 10px;
+}
+
+#current_track, #current_artist, #current_album { font-size: 1em; margin-bottom: 2px;}
+
+#votes_container {
+  margin-top: 3px;
+  margin-left: 0;
+  font-size: 1em;
+}
+
+#votes_container span {
+  text-shadow: 0 0 1px rgba(34,34,34,0.4);
+}
+
+#voting_container {
+  font-size: 2em;  
+}
+
+#rating_bubble { position: static; display: inline-block;; background: #666; color: #fff; border-radius: 50%; width: 1.5em; height: 1.5em; line-height: 1.5em; text-shadow: none; }
