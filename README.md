@@ -17,11 +17,19 @@ npm start
 
 ## Building
 
+Install the package `electron-packager`
+
+```bash
+npm install electron-packager -g
+```
+
 From the project folder run
 
 ```bash
 electron-packager . --mac --icon=black.icns --overwrite
 ```
+
+File should exist inside the project folder at `Jukebox-darwin-x64/Jukebox.app`
 
 Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/).
 
