@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  </head>
+  <style>
+    body {
+      color: white;
+      background: #222;
+      font: 1.0em Circular Standard,Futura,Gill Sans,Gill Sans MT,Calibri,sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      position: fixed;
+      overflow-y: scroll;
+      width: 100%;
+    }
+    #rating_count {
+      float: left;
+      text-align: center;
+      width: 20px;
+      text-align: center;
+      border-top:    1px solid #fff;
+      border-bottom: 1px solid #fff;
+      border-left:   1px solid #fff;
+    }
+    #track_title {
+      float: left;
+      text-align: center;
+      width: 180px;
+      border-top:    1px solid #fff;
+      border-right:  1px solid #fff;
+      border-bottom: 1px solid #fff;
+      border-left:   1px solid #fff;
+    }
+    #track_owner {
+      float: left;
+      text-align: center;
+      width: 30px;
+      color: white;
+      border-top:    1px solid #fff;
+      border-right:  1px solid #fff;
+      border-bottom: 1px solid #fff;
+    }
+    a {
+      font-size: 1.0em;
+      display: inline-block;
+      color: #fff;
+      background: none;
+      transition: transform .15s;
+    }
+  </style>
+  <body style="-webkit-app-region: drag">
+    <span id="rating_count">-</span>
+    <span id="track_title">-</span>
+    <span id="track_owner">-</span>
+    <div class="vote_buttons">
+      <a href="#" id="vote_up"><i class="fa fa-thumbs-o-up"></i></a>
+      <a href="#" id="vote_down"><i class="fa fa-thumbs-o-down"></i></a>
+    </div>
+  </body>
+  <script>
+    require('./js/disable_actions.js')
+    require('./js/layout_4.js')
+  </script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Jukebox</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  </head>
+  <body style="-webkit-app-region: drag">
+    <div class="player">
+      <div id="artwork_background"></div>
+      <div class="status">
+
+        <div class="left_container">
+          <div id="artwork-container">
+            <img draggable="false" id="artwork" alt="" />
+            <span id="rating_bubble" class="unrated"></span>
+          </div>
+        </div>
+
+        <div class="middle_container">
+          <span id="current_track">-</span>
+          <span id="current_artist">-</span>
+          <span id="current_album">-</span>
+          <span id="current_owner">-</span>
+        </div>
+
+        <div class="right_container">
+          <div id="rating">
+            <div id="voting_container">
+              <a href="#" id="vote_up"><i class="fa fa-thumbs-o-up"></i></a>
+              <a href="#" id="vote_down"><i class="fa fa-thumbs-o-down"></i></a>
+              <a href="#" id="playlist"><i class="fa fa-list"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="votes_container">
+        <span id="user_positive_votes"></span>
+        <span id="user_negative_votes"></span>
+        <span id="user_no_votes"></span>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    require('./js/disable_actions.js')
+    require('./js/layout_2.js')
+  </script>
+</html>

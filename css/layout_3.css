@@ -1,0 +1,160 @@
+.player {
+  height: 100%;
+  background: #222;
+  color: #fff;
+  position: relative;
+}
+
+body {
+  font: .625em/1.286 Circular Standard,Futura,Gill Sans,Gill Sans MT,Calibri,sans-serif;
+  background: #fff;
+  color: #393939;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+a {
+  -webkit-app-region: no-drag;
+}
+
+.status { position: relative; padding: 20px 15px 10px 15px; overflow: hidden; height: 50px }
+.player>* { position: relative; }
+.player>.artwork-background { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: center; background-size: cover; background-color: #393939; filter: blur(30px) contrast(90%) brightness(110%) saturate(130%) opacity(80%); transform: scale(1.2); }
+
+#artwork-container { width: 50px; height: 50px; margin: 0 auto 2em; position: relative; }
+#artwork-container img { display: block; height: 100%; width: 100%; border-radius: 2px; box-shadow: 0 0 4px rgba(#222,.1); }
+
+#rating_bubble { text-align: center; }
+#artwork-container>span { position: absolute; top: -1em; right: -1em; background: #666; color: #fff; border-radius: 50%; width: 2em; height: 2em; line-height: 2em; }
+
+#artwork-container>.positive_9 { background-color: #efd73c; }
+#artwork-container>.positive_8 { background-color: #decd5f; }
+#artwork-container>.positive_7 { background-color: #cfcd63; }
+#artwork-container>.positive_6 { background-color: #c0cd66; }
+#artwork-container>.positive_5 { background-color: #b0cc6a; }
+#artwork-container>.positive_4 { background-color: #a0cc6e; }
+#artwork-container>.positive_3 { background-color: #93cd79; }
+#artwork-container>.positive_2 { background-color: #8bcf98; }
+#artwork-container>.positive_1 { background-color: #84d2bd; }
+#artwork-container>.neutral    { background-color: #7dd5ea; }
+#artwork-container>.negative_1 { background-color: #bb9ac5; }
+#artwork-container>.negative_2 { background-color: #dd79b0; }
+#artwork-container>.negative_3 { background-color: #cc6666; }
+#artwork-container>.negative_4 { background-color: #b26733; }
+#artwork-container>.negative_5 { background-color: #996600; }
+#artwork-container>.negative_6 { background-color: #7b2908; }
+#artwork-container>.unrated, #artwork-container .fa { display: none; }
+
+#voting_container { font-size: 2.4em; }
+#voting_container>a { display: inline-block; margin: 0 .3em; }
+#voting_container a { color: #fff; background: none; border: 0; transition: transform .15s; }
+#voting_container a:not(.voted):focus, #voting_container a:not(.voted):hover { transform: scale(1.2) rotate(5deg); }
+#vote_up:hover { color:green; }
+#vote_down:hover { color: red; }
+#playlist:hover { color: yellow; }
+#vote_up.voted {
+  color:green;
+}
+#vote_down.voted {
+  color: red;
+}
+
+#current_track, #current_artist, #current_album {
+  white-space: nowrap;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#current_track, #current_artist {
+  font-weight: 400;
+  font-size: 1.143em;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 0 1px rgba(34,34,34,0.4);
+}
+
+#artwork_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: center;
+  background-size: cover;
+  background-color: #393939;
+  -webkit-filter: blur(30px) contrast(90%) brightness(110%) saturate(130%) opacity(80%);
+  filter: blur(30px) contrast(90%) brightness(110%) saturate(130%) opacity(80%);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+#votes_container {
+  height: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+  white-space: nowrap;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#user_positive_votes {
+  color: lightgreen;
+}
+
+#user_negative_votes {
+  color: lightcoral;
+}
+
+#time_container {
+  height: 30px;
+  margin-left: 15px;
+}
+
+#time_elapsed {
+  float: left;
+  color: #fff;
+  text-shadow: 0 0 1px rgba(34,34,34,0.4);
+  margin-right: .5em;
+}
+
+#time_details {
+  float: left;
+}
+
+#time_total {
+  float: left;
+  color: rgba(255,255,255,0.8);
+  text-shadow: 0 0 1px rgba(34,34,34,0.4);
+  margin-left: .5em;
+}
+
+.left_container {
+  float: left;
+}
+
+.middle_container {
+  float: left;
+  margin-left: 15px;
+  width: 140px;
+}
+
+.right_container {
+  float: left;
+  width: 10px;
+}

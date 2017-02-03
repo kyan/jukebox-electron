@@ -1,0 +1,43 @@
+body {
+  font: .875em/1.286 Circular Standard,Futura,Gill Sans,Gill Sans MT,Calibri,sans-serif;
+  background: #393939;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+button {
+  margin-top: 10px;
+  background: #fff;
+  border: 0;
+  text-transform: uppercase;
+  font-size: .786em;
+  letter-spacing: .1em;
+  width: 80%;
+  height: 30px;
+  transition: background 0.15s;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.15s;
+  text-decoration: none;
+  padding: 0;
+  font-family: Circular Standard, Futura, Gill Sans, Gill Sans MT, Calibri, sans-serif;
+}
+
+button:hover { background: lightgreen; }

@@ -1,0 +1,75 @@
+body { font: .7em/1.286  Circular Standard,Futura,Gill Sans,Gill Sans MT,Calibri,sans-serif;
+  background: lightgrey;
+  color: #393939;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+h2 {
+  margin: 10px;
+  width: 95%;
+}
+
+table { border-collapse: collapse; margin: 0; width: 100%; table-layout: fixed; }
+thead { display: none; }
+
+tr:nth-child(even) { background: #f7f7f7; }
+tr.current { background-color: lightyellow; }
+
+td { padding: 1em 1em 1em 0; position: relative; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+td:first-child { padding-left: 1em; }
+
+td b { font-weight: normal; color: #aaa; }
+
+td.track_owner, td.track_rating, td.track_action {
+  width:40px;
+}
+
+.search_helper { visibility: hidden; font-size: 1.142em; color: #aaa; }
+.search_helper:focus, .search_helper:hover { color: #222; }
+tr:hover .search_helper { visibility: visible; }
+
+.playlist_action { background: none; border: 0; font-size: 1.142em; color: #aaa; }
+.playlist_action:focus, .playlist_action:hover { color: #222; }
+
+.track_time_to_play { width: 2.9em; transition: color .3s; }
+
+.track_duration { width: 2.9em; }
+.track_artist { width: 10em; }
+.track_added_by { width: 2.2em; text-overflow: clip; }
+.track_added_by>span { padding-right: 15px; }
+
+.track_rating { width: 4em; font-weight: bold; }
+.track_rating>span { padding: .357em; border: 2px solid transparent; border-radius: 3px; min-width: 2em; height: 1.286em; text-align: center; display: inline-block; float: none; width: auto; line-height: normal; vertical-align: middle; background: no-repeat center #fff; }
+.track_rating>.double_oh  { background: #ff00cc; color: #fff; }
+.track_rating>.positive_9 { color: #efd73c; }
+.track_rating>.positive_8 { color: #decd5f; }
+.track_rating>.positive_7 { color: #cfcd63; }
+.track_rating>.positive_6 { color: #c0cd66; }
+.track_rating>.positive_5 { color: #b0cc6a; }
+.track_rating>.positive_4 { color: #a0cc6e; }
+.track_rating>.positive_3 { color: #93cd79; }
+.track_rating>.positive_2 { color: #8bcf98; }
+.track_rating>.positive_1 { color: #84d2bd; }
+.track_rating>.neutral    { color: #7dd5ea; }
+.track_rating>.negative_1 { color: #bb9ac5; }
+.track_rating>.negative_2 { color: #dd79b0; }
+.track_rating>.negative_3 { color: #cc6666; }
+.track_rating>.negative_4 { color: #b26733; }
+.track_rating>.negative_5 { color: #996600; }
+.track_rating>.negative_6 { color: #7b2908; }
+.track_rating>.hated      { background-image: asset-data-url('bg_rating_hated.gif'); text-indent: -9999px; }
+.track_rating>.unrated    { text-indent: -9999px; line-height: 0; }
+.track_rating>.unrated:after { content: "0"; text-indent: 0; display: block; line-height: initial; }
+tr.voted_positive>.track_rating>span { border-color: rgba(#a0cc6e,0.5); }
+tr.voted_negative>.track_rating>span { border-color: rgba(#cc6666,0.5); }
