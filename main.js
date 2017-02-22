@@ -2,7 +2,8 @@ const electron = require('electron')
 const app = electron.app
 const Menu = electron.Menu
 const BrowserWindow = electron.BrowserWindow
-const {ipcMain} = require('electron')
+const {ipcMain, globalShortcut} = require('electron')
+const storage = require('electron-json-storage');
 
 const path = require('path')
 const url = require('url')
@@ -105,13 +106,15 @@ function reloadAllWindows() {
 }
 
 function createSettingsWindow() {
-  settingsWindow = new BrowserWindow({width: 250, height: 250, resizable: false, alwaysOnTop: true})
+  settingsWindow = new BrowserWindow({width: 250, height: 465, resizable: false, alwaysOnTop: true})
 
   settingsWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'settings.html'),
     protocol: 'file:',
     slashes: true
   }))
+
+  // settingsWindow.webContents.openDevTools()
 
   settingsWindow.on('closed', function () {
     settingsWindow = null
@@ -133,6 +136,33 @@ function createPlaylistWindow() {
   })
 }
 
+function registerHotkeys(window) {
+  globalShortcut.unregisterAll()
+  storage.get('vote_up_hotkey', function(error, data) {
+    if (error) throw error;
+    if (typeof(data) == 'object') {
+      return console.log('Object returned expected value')
+    }
+
+    const ret = globalShortcut.register(data, () => {
+      console.log('VOTEUP shortcut is pressed: ' + data)
+      window.webContents.send('voteUp', '')
+    })
+  });
+
+  storage.get('vote_down_hotkey', function(error, data) {
+    if (error) throw error;
+    if (typeof(data) == 'object') {
+      return console.log('Object returned expected value')
+    }
+
+    const ret = globalShortcut.register(data, () => {
+      console.log('VOTEDOWN shortcut is pressed: ' + data)
+      window.webContents.send('voteDown', '')
+    })
+  });
+}
+
 function createFirstLayoutWindow () {
   mainWindow = new BrowserWindow({width: 380, height: 155, resizable: false, frame: false, alwaysOnTop: true})
   // mainWindow = new BrowserWindow({width: 800, height: 500, resizable: false, frame: false})
@@ -143,8 +173,8 @@ function createFirstLayoutWindow () {
     slashes: true
   }))
 
-  // Open the DevTools.
   // mainWindow.webContents.openDevTools()
+  registerHotkeys(mainWindow)
 
   mainWindow.on('closed', function () {
     mainWindow = null
@@ -160,6 +190,9 @@ function createSecondLayoutWindow () {
     protocol: 'file:',
     slashes: true
   }))
+
+  // mainWindow.webContents.openDevTools()
+  registerHotkeys(mainWindow)
 
   mainWindow.on('closed', function () {
     mainWindow = null
@@ -178,6 +211,7 @@ function createThirdLayoutWindow() {
   }))
 
   // mainWindow.webContents.openDevTools()
+  registerHotkeys(mainWindow)
 
   mainWindow.on('closed', function () {
     mainWindow = null
@@ -196,6 +230,7 @@ function createFourthLayoutWindow() {
   }))
 
   // mainWindow.webContents.openDevTools()
+  registerHotkeys(mainWindow)
 
   mainWindow.on('closed', function () {
     mainWindow = null
@@ -217,6 +252,11 @@ app.on('ready', function() {
   })
 
 });
+
+app.on('will-quit', () => {
+  // Unregister all shortcuts.
+  globalShortcut.unregisterAll()
+})
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
