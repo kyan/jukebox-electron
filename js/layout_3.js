@@ -31,6 +31,17 @@ storage.get('initials', function(error, data) {
 
   current_user = data
 });
+// Vote listener
+ipcRenderer.on('voteUp', (event, arg) => {
+  if (!hasClass(vote_up, 'voted')) {
+    vote(1)
+  }
+})
+ipcRenderer.on('voteDown', (event, arg) => {
+  if (!hasClass(vote_down, 'voted')) {
+    vote(0)
+  }
+})
 
 current_track = document.getElementById("current_track")
 current_artist = document.getElementById("current_artist")
