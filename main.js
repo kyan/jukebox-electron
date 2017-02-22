@@ -64,23 +64,13 @@ let template = [{
       }
     }
   },
-  // {
-  //   label: 'Layout 4',
-  //   accelerator: 'Cmd+4',
-  //   click: function (item, focusedWindow) {
-  //     if (focusedWindow) {
-  //       closeAllWindows();
-  //       createFourthLayoutWindow();
-  //     }
-  //   }
-  // },
   {
-    label: 'Layout 5',
-    accelerator: 'Cmd+5',
+    label: 'Layout 4',
+    accelerator: 'Cmd+4',
     click: function (item, focusedWindow) {
       if (focusedWindow) {
         closeAllWindows();
-        createFifthLayoutWindow();
+        createFourthLayoutWindow();
       }
     }
   }
@@ -196,29 +186,11 @@ function createThirdLayoutWindow() {
 }
 
 function createFourthLayoutWindow() {
-  // mainWindow = new BrowserWindow({width: 380, height: 155, resizable: false, frame: false, alwaysOnTop: true})
-  mainWindow = new BrowserWindow({width: 800, height: 500, resizable: false, frame: false})
-
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'layout_4.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
-
-  mainWindow.webContents.openDevTools()
-
-  mainWindow.on('closed', function () {
-    mainWindow = null
-    reloadAllWindows();
-  })
-}
-
-function createFifthLayoutWindow() {
   mainWindow = new BrowserWindow({width: 260, height: 74, resizable: false, frame: false, alwaysOnTop: false})
   // mainWindow = new BrowserWindow({width: 800, height: 500, resizable: false, frame: false})
 
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'layout_5.html'),
+    pathname: path.join(__dirname, 'layout_4.html'),
     protocol: 'file:',
     slashes: true
   }))
