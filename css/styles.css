@@ -65,7 +65,7 @@ a {
 #rating_bubble.negative_6 { background-color: #7b2908; }
 #rating_bubble.unrated, #artwork-container .fa { display: none; }
 
-#voting_container { font-size: 1.7em; }
+#voting_container { font-size: 2.4em; }
 #voting_container>a { display: inline-block; margin: 0 .3em; }
 #voting_container a { color: #fff; background: none; border: 0; transition: transform .15s; }
 #voting_container a:not(.voted):focus, #voting_container a:not(.voted):hover { transform: scale(1.2) rotate(5deg); }
@@ -137,6 +137,7 @@ a {
   color: #fff;
   text-shadow: 0 0 1px rgba(34,34,34,0.4);
   margin-right: .5em;
+  width: 35px;
 }
 
 #time_details {
@@ -148,6 +149,7 @@ a {
   color: rgba(255,255,255,0.8);
   text-shadow: 0 0 1px rgba(34,34,34,0.4);
   margin-left: .5em;
+  width: 35px;
 }
 
 #progressbar {
