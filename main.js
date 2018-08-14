@@ -106,7 +106,7 @@ function reloadAllWindows() {
 }
 
 function createSettingsWindow() {
-  settingsWindow = new BrowserWindow({width: 250, height: 465, resizable: false, alwaysOnTop: false})
+  settingsWindow = new BrowserWindow({width: 250, height: 465, resizable: false, alwaysOnTop: true})
 
   settingsWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'settings.html'),
@@ -123,7 +123,7 @@ function createSettingsWindow() {
 }
 
 function createPlaylistWindow() {
-  playlistWindow = new BrowserWindow({width: 450, height: 200, resizable: false, alwaysOnTop: false})
+  playlistWindow = new BrowserWindow({width: 450, height: 200, resizable: false, alwaysOnTop: true})
 
   playlistWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'playlist.html'),
@@ -164,7 +164,7 @@ function registerHotkeys(window) {
 }
 
 function createFirstLayoutWindow () {
-  mainWindow = new BrowserWindow({width: 380, height: 155, resizable: false, frame: false, alwaysOnTop: false})
+  mainWindow = new BrowserWindow({width: 380, height: 155, resizable: false, frame: false, alwaysOnTop: true})
   // mainWindow = new BrowserWindow({width: 800, height: 500, resizable: false, frame: false})
 
   mainWindow.loadURL(url.format({
@@ -183,7 +183,7 @@ function createFirstLayoutWindow () {
 }
 
 function createSecondLayoutWindow () {
-  mainWindow = new BrowserWindow({width: 380, height: 130, resizable: false, frame: false, alwaysOnTop: false})
+  mainWindow = new BrowserWindow({width: 380, height: 130, resizable: false, frame: false, alwaysOnTop: true})
 
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'layout_2.html'),
@@ -201,7 +201,7 @@ function createSecondLayoutWindow () {
 }
 
 function createThirdLayoutWindow() {
-  mainWindow = new BrowserWindow({width: 260, height: 100, resizable: false, frame: false, alwaysOnTop: false})
+  mainWindow = new BrowserWindow({width: 260, height: 100, resizable: false, frame: false, alwaysOnTop: true})
   // mainWindow = new BrowserWindow({width: 800, height: 500, resizable: false, frame: false})
 
   mainWindow.loadURL(url.format({
@@ -220,7 +220,7 @@ function createThirdLayoutWindow() {
 }
 
 function createFourthLayoutWindow() {
-  mainWindow = new BrowserWindow({width: 260, height: 74, resizable: false, frame: false, alwaysOnTop: false})
+  mainWindow = new BrowserWindow({width: 260, height: 74, resizable: false, frame: false, alwaysOnTop: true})
   // mainWindow = new BrowserWindow({width: 800, height: 500, resizable: false, frame: false})
 
   mainWindow.loadURL(url.format({
